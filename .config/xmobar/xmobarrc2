@@ -1,0 +1,47 @@
+-- http://projects.haskell.org/xmobar/
+-- install xmobar with these flags: --flags="with_alsa" --flags="with_mpd" --flags="with_xft"  OR --flags="all_extensions"
+-- you can find weather location codes here: http://weather.noaa.gov/index.html
+
+Config { font    = "xft:Ubuntu:weight=bold:pixelsize=13:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Mononoki Nerd Font:pixelsize=15:antialias=true:hinting=true"
+                           , "xft:Font Awesome 5 Free pixelsize=18:antialias=true:hinting=true"
+                           , "xft:Font Awesome 5 Brands:pixelsize=12"
+                           ]
+       , bgColor = "black"
+       , alpha = 120
+       , position = Static { xpos = 3849 , ypos = 4, width = 1900, height = 30 }
+
+       , lowerOnStart = True
+       , hideOnStart = False
+       , allDesktops = True
+       , persistent = True
+       , iconRoot = "/home/peter/.xmonad/xpm/"  -- default: "."
+       , commands = [
+                    -- Time and date
+                      Run Date "<fn=2>\xf017</fn>  %b %d %Y - (%H:%M) " "date" 50
+                      -- Network up and down
+                    , Run Network "enp6s0f1" ["-t", "<fn=1>\xf0ab </fn><fc=#C8C8C8><rx></fc> kb  <fn=1>\xf0aa </fn><fc=#C8C8C8><tx></fc> kb"] 20
+        , Run MultiCpu       [ "--template" , "<icon=cpu_20.xpm/> CPU <total0>%"
+                             , "--Low"      , "50"         -- units: %
+                             , "--High"     , "85"         -- units: %
+                             , "--low"      , "#C8C8C8"
+                             , "--normal"   , "#C8C8C8"
+                             , "--high"     , "#C8C8C8"
+                             ] 10
+                      -- Ram used number and percent
+                    , Run Memory ["-t", " <fn=1>\xf233 </fn> RAM  <fc=#C8C8C8><used></fc>M (<fc=#C8C8C8><usedratio></fc>%)"] 20
+                      -- Disk space free
+                    , Run DiskU [("/", " <fn=1>\xf0c7 </fn> HDD <fc=#C8C8C8><free></fc> free")] [] 60
+                      -- Runs custom script to check for pacman updates.
+                      -- This script is in my dotfiles repo in .local/bin.
+                    , Run Com "bash" ["/home/peter/.config/xmobar/updates-apt.sh"] "" 3600
+                      -- Runs a standard shell command 'uname -r' to get kernel version
+                    , Run Com "uname" ["-r"] "" 3600
+                    , Run UnsafeStdinReader
+                    , Run Battery ["-L","10","-H","100","--low","red","--high","green"] 10
+                    ]
+
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "  %UnsafeStdinReader% }{  <box type=Bottom width=2 mb=2 color=#89CFF0><fc=#89CFF0><fn=1> </fn></fc><fc=#C8C8C8> %uname%</fc></box>  <box type=Bottom width=2 mb=2 color=#89CFF0><fc=#89CFF0>%multicpu%</fc></box>  <box type=Bottom width=2 mb=2 color=#89CFF0><fc=#89CFF0>%memory%</fc></box>   <box type=Bottom width=2 mb=2 color=#89CFF0><fc=#89CFF0>%disku%</fc></box>  <box type=Bottom width=2 mb=2 color=#89CFF0><fc=#89CFF0>%enp6s0f1% </fc></box>  <box type=Bottom width=2 mb=2 color=#89CFF0><fc=#89CFF0><fn=1> </fn> <fc=#C8C8C8>%bash%</fc> </fc></box>  "
+       }
