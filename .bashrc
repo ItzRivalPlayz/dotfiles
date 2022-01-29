@@ -198,6 +198,7 @@ alias push='git push origin'
 alias stat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
+alias dotcp='bash /home/peter/GitHub-Repos/dotfiles/copy-dotfiles-to-repo.sh'
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
