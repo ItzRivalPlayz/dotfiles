@@ -1,0 +1,1 @@
+/home/peter/.config/i3/
