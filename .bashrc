@@ -185,6 +185,11 @@ alias pscpu='ps auxf | sort -nr -k 3'
 # Merge Xresources
 alias merge='xrdb -merge ~/.Xresources'
 
+# Home CD
+alias h='cd $HOME'
+alias home'cd $HOME'
+
+
 # git
 alias addup='git add -u'
 alias addall='git add .'
