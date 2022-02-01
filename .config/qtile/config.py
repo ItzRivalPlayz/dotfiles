@@ -13,6 +13,7 @@ from typing import List  # noqa: F401from typing import List  # noqa: F401
 
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 myTerm = "kitty"      # My terminal of choice
+myConfig = "code $HOME/.config/qtile/"
 myBrowser = "firefox" # My terminal of choice
 
 keys = [
@@ -215,7 +216,7 @@ keys = [
          ])
 ]
 
-groups = [Group("DEV", layout='monadtall'),
+groups = [Group("DEV", layout='max'),
           Group("WWW", layout='monadtall'),
           Group("SYS", layout='monadtall'),
           Group("SYS", layout='monadtall'),
@@ -318,7 +319,7 @@ def init_widgets_list():
               widget.Image(
                        filename = "~/.config/qtile/icons/python-white.png",
                        scale = "False",
-                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
+                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myConfig)}
                        ),
               widget.Sep(
                        linewidth = 0,
@@ -429,7 +430,7 @@ def init_widgets_list():
                        ),
              widget.Net(
                        interface = "wlan0",
-                       format = 'Net: {down}',
+                       format = '{down}',
                        foreground = "d8dee9",
                        background = colors[0],
                        padding = 5
