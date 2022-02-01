@@ -10,4 +10,5 @@ cp /home/peter/.config/picom /home/peter/Github-Repos/dotfiles/.config --force -
 cp /home/peter/.config/i3 /home/peter/Github-Repos/dotfiles/.config --force -rv
 cp /home/peter/.bashrc /home/peter/Github-Repos/dotfiles/ --force -rv
 cp /home/peter/.config/qtile /home/peter/Github-Repos/dotfiles/.config --force -rv
+cp /home/peter/.config/doom /home/peter/Github-Repos/dotfiles/.config --force -rv
 cp /home/peter/.config/starship.toml /home/peter/Github-Repos/dotfiles/.config --force -rv
