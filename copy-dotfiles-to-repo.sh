@@ -12,3 +12,4 @@ cp /home/peter/.bashrc /home/peter/Github-Repos/dotfiles/ --force -rv
 cp /home/peter/.config/qtile /home/peter/Github-Repos/dotfiles/.config --force -rv
 cp /home/peter/.config/doom /home/peter/Github-Repos/dotfiles/.config --force -rv
 cp /home/peter/.config/starship.toml /home/peter/Github-Repos/dotfiles/.config --force -rv
+cp /home/peter/.config/awesome /home/peter/Github-Repos/dotfiles/.config --force -rv
