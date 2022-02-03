@@ -1,3 +1,11 @@
+#  ____ _____
+# |  _ \_   _|  Derek Taylor (DistroTube)
+# | | | || |    http://www.youtube.com/c/DistroTube
+# | |_| || |    http://www.gitlab.com/dwt1/
+# |____/ |_|
+#
+# My bash config. Not much to see here; just some pretty standard stuff.
+
 ### EXPORT
 export TERM="xterm-256color"                      # getting proper colors
 export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
@@ -179,7 +187,7 @@ alias merge='xrdb -merge ~/.Xresources'
 
 # Home CD
 alias h='cd $HOME'
-alias home'cd $HOME'
+alias home='cd $HOME'
 
 
 # git
@@ -250,6 +258,8 @@ alias tips='lbrynet txo spend --type=support --is_not_my_input --blocking'
 alias dtoscopy='[ -d ~/.config ] || mkdir ~/.config && cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/dtos/* ~'
 # Backup contents of /etc/dtos to a backup folder in $HOME.
 alias dtosbackup='cp -Rf /etc/dtos ~/dtos-backup-$(date +%Y.%m.%d-%H.%M.%S)'
+
+alias fetch='rsfetch -PdhHrstuU@w'
 
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
