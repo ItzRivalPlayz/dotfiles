@@ -147,7 +147,7 @@ myKeys =
     -- Windows
         , ("M-z", kill)                           -- Kill the currently focused client
         , ("M-S-z", killAll)                         -- Kill all the windows on current workspace
-        , ("M1-<Tab>", spawn "rofi -show run")                        -- opens discord 
+        , ("M1-<Tab>", spawn "rofi -show run")                   
         
 
     -- Floating windows
