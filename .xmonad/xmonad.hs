@@ -98,11 +98,14 @@ windowCount     = gets $ Just . show . length . W.integrate' . W.stack . W.works
 ------------------------------------------------------------------------
 main = do
     -- Launching two instances of xmobar on their monitors.
+   -- XMOBAR 
     xmproc0 <- spawnPipe "xmobar -x 0 /home/peter/.config/xmobar/xmobarrc"
     xmproc1 <- spawnPipe "xmobar -x 1 /home/peter/.config/xmobar/xmobarrc2"
+   -- DISPLAY
     spawnPipe "xrandr --output eDP-1-1 --mode 1920x1080 --pos 3840x0"
     spawnPipe "xrandr --output HDMI-0 --mode 3840x1080 --pos 0x0"
-    xmproc <- spawnPipe "nitrogen --set-zoom-fill $HOME/Pictures/wallpapers/14.jpg &"
+    -- WALLPAPER
+    xmproc <- spawnPipe "nitrogen --set-zoom-fill $HOME/Pictures/wallpapers/3.jpg &"
        -- the xmonad
     xmonad $ ewmh desktopConfig
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageHook desktopConfig <+> manageDocks
@@ -208,11 +211,8 @@ myKeys =
         , ("M-c", spawn (myTerminal ++ " -e zsh"))
                
     --- My Applications (Super+Alt+Key)
-        , ("M-M1-e", spawn (myTerminal ++ " -e neomutt"))
-        , ("M-M1-t", spawn "geany")
         , ("M-M1-f", spawn "nautilus")
         , ("M1-w", spawn "/usr/bin/firefox")
-        , ("M1-S-w", spawn "bash /home/peter/.xmonad/feh.sh")
        
     -- Multimedia Keys
         , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
