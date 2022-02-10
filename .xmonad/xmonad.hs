@@ -211,7 +211,6 @@ myKeys =
         , ("M-c", spawn (myTerminal ++ " -e zsh"))
                
     --- My Applications (Super+Alt+Key)
-        , ("M-M1-f", spawn "nautilus")
         , ("M1-w", spawn "/usr/bin/firefox")
        
     -- Multimedia Keys
