@@ -19,7 +19,7 @@ polybar HDMI1 &
 polybar eDP11 &
 xfce4-power-manager &
 picom &
-nitrogen --set-zoom-fill --random $HOME/Pictures/wallpapers/
+nitrogen --set-zoom-fill --random $HOME/Pictures/wallpapers/3.jpg
 
 ###############################################
 ##           BORDER/WINDOW SETTING           ##
