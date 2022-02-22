@@ -150,7 +150,8 @@ myKeys =
     -- Windows
         , ("M-z", kill)                           -- Kill the currently focused client
         , ("M-S-z", killAll)                         -- Kill all the windows on current workspace
-        , ("M1-<Tab>", spawn "rofi -show run")                   
+        , ("M1-<Tab>", spawn "rofi -show run")       
+        , ("M-M1-S-s", spawn "kitty -e shutdown now")
         
 
     -- Floating windows
@@ -208,7 +209,6 @@ myKeys =
 
     -- Open My Preferred Terminal.
         , ("M-<Return>", spawn (myTerminal ++ ""))
-        , ("M-c", spawn (myTerminal ++ " -e zsh"))
                
     --- My Applications (Super+Alt+Key)
         , ("M1-w", spawn "/usr/bin/firefox")
