@@ -105,7 +105,7 @@ main = do
     spawnPipe "xrandr --output eDP-1-1 --mode 1920x1080 --pos 3840x0"
     spawnPipe "xrandr --output HDMI-0 --mode 3840x1080 --pos 0x0"
     -- WALLPAPER
-    xmproc <- spawnPipe "nitrogen --set-zoom-fill $HOME/Pictures/wallpapers/3.jpg &"
+    xmproc <- spawnPipe "nitrogen --set-zoom-fill $HOME/Desktop/GitHub-Repos/dotfiles/ultrawide-wallpapers/3.jpg &"
        -- the xmonad
     xmonad $ ewmh desktopConfig
         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageHook desktopConfig <+> manageDocks
